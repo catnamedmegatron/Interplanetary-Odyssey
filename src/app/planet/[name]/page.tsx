@@ -120,27 +120,27 @@ export default function PlanetPage() {
   if (!planet) return notFound()
 
   return (
-    <main className="relative min-h-screen text-white px-6 py-12 bg-black font-sans overflow-hidden">
+    <main className="relative min-h-screen text-white px-4 sm:px-6 py-8 sm:py-12 bg-black font-sans overflow-hidden">
       {/* 🌌 Background */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[#0a0a1f] via-[#111132] to-black" />
       <div className="absolute inset-0 -z-10 pointer-events-none bg-[radial-gradient(circle,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[length:30px_30px]" />
 
       {/* 🔙 Back */}
-      <Link href="/" className="absolute top-6 left-6 z-20 text-white/80 hover:text-white text-sm hover:underline">
+      <Link href="/" className="absolute top-4 sm:top-6 left-4 sm:left-6 z-20 text-white/80 hover:text-white text-sm hover:underline">
         ← Back
       </Link>
 
       {/* 🪐 Header & Embed Split Layout */}
-      <section className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start mt-10 relative z-10">
-        <div className="space-y-6">
-          <h1 className="text-5xl font-extrabold text-white drop-shadow-glow tracking-wide">
+      <section className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-start mt-6 sm:mt-10 relative z-10">
+        <div className="space-y-4 sm:space-y-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white drop-shadow-glow tracking-wide">
             {planet.name}
           </h1>
           <Planet3DEmbed planetName={planet.name} />
         </div>
 
         {/* 📊 Planet Stats */}
-        <div className="grid grid-cols-2 sm:grid-cols-2 gap-4 text-sm my-auto">
+        <div className="grid grid-cols-2 sm:grid-cols-2 gap-3 sm:gap-4 text-xs sm:text-sm my-auto">
           {[
   ["🧲 Gravity", planet.gravity],
   ["🕰️ Day Length", planet.dayLength],
@@ -164,17 +164,17 @@ export default function PlanetPage() {
 .map(([label, value], i) => (
             <div
               key={i}
-              className="p-4 rounded-xl backdrop-blur bg-white/5 border border-purple-400/20 drop-shadow-glow hover:ring-2 hover:ring-purple-500/40 transition-all duration-300 text-center"
+              className="p-3 sm:p-4 rounded-xl backdrop-blur bg-white/5 border border-purple-400/20 drop-shadow-glow hover:ring-2 hover:ring-purple-500/40 transition-all duration-300 text-center"
             >
-              <div className="text-purple-300 text-sm font-medium">{label}</div>
-              <div className="text-white font-semibold text-base">{value}</div>
+              <div className="text-purple-300 text-xs sm:text-sm font-medium">{label}</div>
+              <div className="text-white font-semibold text-sm sm:text-base">{value}</div>
             </div>
           ))}
         </div>
       </section>
 
       {/* 🌌 Gemini + Facts Split Layout */}
-<section className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-20 max-w-10xl mx-auto px-15 relative z-10">
+<section className="mt-12 sm:mt-16 md:mt-20 grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 md:gap-20 max-w-10xl mx-auto px-4 sm:px-8 md:px-15 relative z-10">
   {/* Gemini Summary */}
 <div className="px-4 py-6 rounded-xl bg-white/5 border border-purple-400/20 backdrop-blur text-gray-200 drop-shadow-glow animate-fade-in-up">
   <h2 className="text-xl text-purple-300 font-bold mb-3">🌌 Gemini’s Travel Teaser</h2>
@@ -198,41 +198,41 @@ export default function PlanetPage() {
 
 {/* 🚀 Interplanetary Itinerary */}
 {itinerary && !loadingSummary && !loadingPlan && (
-  <section className="mt-12 max-w-7xl mx-auto animate-fade-in-up">
-    <div className="rounded-2xl bg-white/5 backdrop-blur border border-teal-400/20 shadow-xl text-gray-100 px-6 py-10 space-y-10">
-      <h2 className="text-3xl md:text-4xl font-bold text-teal-300 text-center mb-2 tracking-wide drop-shadow-glow">
+  <section className="mt-8 sm:mt-12 max-w-7xl mx-auto animate-fade-in-up px-4">
+    <div className="rounded-2xl bg-white/5 backdrop-blur border border-teal-400/20 shadow-xl text-gray-100 px-4 sm:px-6 py-6 sm:py-10 space-y-6 sm:space-y-10">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-teal-300 text-center mb-2 tracking-wide drop-shadow-glow">
         🚀 Interplanetary Itinerary: {itinerary.planet}
       </h2>
-      <p className="text-center text-base text-white/60 mb-4">
+      <p className="text-center text-sm sm:text-base text-white/60 mb-4">
         Your mission-ready travel itinerary for {itinerary.planet}. Optimized for 2100+ standards.
       </p><br></br>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
         {/* Launch Window */}
-        <div className="bg-white/5 p-4 rounded-xl border border-teal-500/30">
-          <h3 className="text-teal-300 font-semibold text-lg mb-1">🚀 Launch Window</h3>
-          <p className="text-white/90 text-base">{itinerary.launchWindow}</p>
+        <div className="bg-white/5 p-3 sm:p-4 rounded-xl border border-teal-500/30">
+          <h3 className="text-teal-300 font-semibold text-base sm:text-lg mb-1">🚀 Launch Window</h3>
+          <p className="text-white/90 text-sm sm:text-base">{itinerary.launchWindow}</p>
         </div>
 
         {/* Transit */}
-        <div className="bg-white/5 p-4 rounded-xl border border-teal-500/30">
-          <h3 className="text-teal-300 font-semibold text-lg mb-1">🛰 Transit Method</h3>
-          <p className="text-white/90 text-base">{itinerary.transit.method}</p>
-          <p className="text-white/70 text-base mt-1">⏳ Duration: {itinerary.transit.duration}</p>
+        <div className="bg-white/5 p-3 sm:p-4 rounded-xl border border-teal-500/30">
+          <h3 className="text-teal-300 font-semibold text-base sm:text-lg mb-1">🛰 Transit Method</h3>
+          <p className="text-white/90 text-sm sm:text-base">{itinerary.transit.method}</p>
+          <p className="text-white/70 text-sm sm:text-base mt-1">⏳ Duration: {itinerary.transit.duration}</p>
         </div>
 
         {/* Lodging */}
-        <div className="bg-white/5 p-4 rounded-xl border border-teal-500/30">
-          <h3 className="text-teal-300 font-semibold text-lg mb-1">🏨 Lodging</h3>
-          <p className="text-white/90 text-base font-bold">{itinerary.lodging.name}</p>
-          <p className="text-white/80 text-base">{itinerary.lodging.location}</p>
-          <p className="text-white/70 text-base mt-1">{itinerary.lodging.description}</p>
+        <div className="bg-white/5 p-3 sm:p-4 rounded-xl border border-teal-500/30">
+          <h3 className="text-teal-300 font-semibold text-base sm:text-lg mb-1">🏨 Lodging</h3>
+          <p className="text-white/90 text-sm sm:text-base font-bold">{itinerary.lodging.name}</p>
+          <p className="text-white/80 text-sm sm:text-base">{itinerary.lodging.location}</p>
+          <p className="text-white/70 text-sm sm:text-base mt-1">{itinerary.lodging.description}</p>
         </div>
 
         {/* Landmarks */}
-        <div className="bg-white/5 p-4 rounded-xl border border-teal-500/30">
-          <h3 className="text-teal-300 font-semibold text-lg mb-1">📍 Landmarks</h3>
-          <ul className="text-white/90 text-base list-disc list-inside space-y-1">
+        <div className="bg-white/5 p-3 sm:p-4 rounded-xl border border-teal-500/30">
+          <h3 className="text-teal-300 font-semibold text-base sm:text-lg mb-1">📍 Landmarks</h3>
+          <ul className="text-white/90 text-sm sm:text-base list-disc list-inside space-y-1">
             {itinerary.landmarks.map((item, i) => (
               <li key={i}>{item}</li>
             ))}
@@ -240,9 +240,9 @@ export default function PlanetPage() {
         </div>
 
         {/* Activities */}
-        <div className="bg-white/5 p-4 rounded-xl border border-teal-500/30">
-          <h3 className="text-teal-300 font-semibold text-lg mb-1">🎯 Activities</h3>
-          <ul className="text-white/90 text-base list-disc list-inside space-y-1">
+        <div className="bg-white/5 p-3 sm:p-4 rounded-xl border border-teal-500/30">
+          <h3 className="text-teal-300 font-semibold text-base sm:text-lg mb-1">🎯 Activities</h3>
+          <ul className="text-white/90 text-sm sm:text-base list-disc list-inside space-y-1">
             {itinerary.activities.map((item, i) => (
               <li key={i}>{item}</li>
             ))}
@@ -250,31 +250,31 @@ export default function PlanetPage() {
         </div>
 
         {/* Medical & Safety */}
-        <div className="bg-white/5 p-4 rounded-xl border border-teal-500/30">
-          <h3 className="text-teal-300 font-semibold text-lg mb-1">🩺 Medical & Safety</h3>
-          <p className="text-white/80 text-base">• Radiation: {itinerary.medical.radiation}</p>
-          <p className="text-white/80 text-base">• Gear: {itinerary.medical.equipment}</p>
-          <p className="text-white/80 text-base">• Hydration: {itinerary.medical.hydration}</p>
+        <div className="bg-white/5 p-3 sm:p-4 rounded-xl border border-teal-500/30">
+          <h3 className="text-teal-300 font-semibold text-base sm:text-lg mb-1">🩺 Medical & Safety</h3>
+          <p className="text-white/80 text-sm sm:text-base">• Radiation: {itinerary.medical.radiation}</p>
+          <p className="text-white/80 text-sm sm:text-base">• Gear: {itinerary.medical.equipment}</p>
+          <p className="text-white/80 text-sm sm:text-base">• Hydration: {itinerary.medical.hydration}</p>
         </div>
 
         {/* Communication */}
-        <div className="bg-white/5 p-4 rounded-xl border border-teal-500/30">
-          <h3 className="text-teal-300 font-semibold text-lg mb-1">📡 Communication</h3>
-          <p className="text-white/80 text-base">• Uplink: {itinerary.communications.uplink}</p>
-          <p className="text-white/80 text-base">• Latency: {itinerary.communications.latency}</p>
+        <div className="bg-white/5 p-3 sm:p-4 rounded-xl border border-teal-500/30">
+          <h3 className="text-teal-300 font-semibold text-base sm:text-lg mb-1">📡 Communication</h3>
+          <p className="text-white/80 text-sm sm:text-base">• Uplink: {itinerary.communications.uplink}</p>
+          <p className="text-white/80 text-sm sm:text-base">• Latency: {itinerary.communications.latency}</p>
         </div>
 
         {/* Clearance */}
-        <div className="bg-white/5 p-4 rounded-xl border border-teal-500/30">
-          <h3 className="text-teal-300 font-semibold text-lg mb-1">🛂 Clearance</h3>
-          <p className="text-white/80 text-base">• Level: {itinerary.clearance.level}</p>
-          <p className="text-white/80 text-base">• Requirement: {itinerary.clearance.requirement}</p>
+        <div className="bg-white/5 p-3 sm:p-4 rounded-xl border border-teal-500/30">
+          <h3 className="text-teal-300 font-semibold text-base sm:text-lg mb-1">🛂 Clearance</h3>
+          <p className="text-white/80 text-sm sm:text-base">• Level: {itinerary.clearance.level}</p>
+          <p className="text-white/80 text-sm sm:text-base">• Requirement: {itinerary.clearance.requirement}</p>
         </div>
 
         {/* Duration */}
-        <div className="bg-white/5 p-4 rounded-xl border border-teal-500/30">
-          <h3 className="text-teal-300 font-semibold text-lg mb-1">📆 Mission Duration</h3>
-          <p className="text-white/90 text-base">{itinerary.duration}</p>
+        <div className="bg-white/5 p-3 sm:p-4 rounded-xl border border-teal-500/30">
+          <h3 className="text-teal-300 font-semibold text-base sm:text-lg mb-1">📆 Mission Duration</h3>
+          <p className="text-white/90 text-sm sm:text-base">{itinerary.duration}</p>
         </div>
       </div>
     </div>

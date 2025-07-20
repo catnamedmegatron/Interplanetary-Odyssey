@@ -170,7 +170,7 @@ export default function HomePage() {
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="text-6xl md:text-7xl font-extrabold glow-heading"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold glow-heading px-4"
         >
           🌌InterPlanetary Odyssey
         </motion.h1>
@@ -179,9 +179,9 @@ export default function HomePage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.8 }}
-          className="text-xl md:text-2xl text-purple-300 drop-shadow-glow font-medium max-w-2xl mx-auto"
+          className="text-lg sm:text-xl md:text-2xl text-purple-300 drop-shadow-glow font-medium max-w-2xl mx-auto px-4"
         >
-          <div className="bg-blue-900/20 backdrop-blur border border-blue-500/30 rounded-full px-6 py-2 text-sm sm:text-base inline-block">
+          <div className="bg-blue-900/20 backdrop-blur border border-blue-500/30 rounded-full px-4 sm:px-6 py-2 text-xs sm:text-sm md:text-base inline-block">
             Your AI-powered travel planner across the planets
           </div>
         </motion.div>
@@ -191,7 +191,7 @@ export default function HomePage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8, duration: 1 }}
-          className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-10 max-w-4xl w-full px-4"
+          className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mt-8 sm:mt-10 max-w-4xl w-full px-4"
         >
           {[...Array(4)].map((_, idx) => {
             const feature = [
@@ -219,11 +219,11 @@ export default function HomePage() {
             return (
               <div
                 key={idx}
-                className="p-6 bg-white/5 border border-purple-500/10 hover:border-purple-500/30 rounded-2xl backdrop-blur-md shadow-lg transition-all duration-300 text-center space-y-3"
+                className="p-4 sm:p-6 bg-white/5 border border-purple-500/10 hover:border-purple-500/30 rounded-2xl backdrop-blur-md shadow-lg transition-all duration-300 text-center space-y-2 sm:space-y-3"
               >
-                <div className="text-lg font-semibold text-white">{feature.title}</div>
-                <div className="text-4xl">{feature.icon}</div>
-                <p className="text-sm text-gray-300 leading-relaxed">{feature.desc}</p>
+                <div className="text-base sm:text-lg font-semibold text-white">{feature.title}</div>
+                <div className="text-3xl sm:text-4xl">{feature.icon}</div>
+                <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">{feature.desc}</p>
               </div>
             )
           })}
@@ -253,7 +253,7 @@ export default function HomePage() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 w-fit mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8 md:gap-10 w-fit mx-auto px-4">
           {Object.entries(planetData).map(([slug, planet], i) => (
             <motion.div
               key={slug}
@@ -261,21 +261,19 @@ export default function HomePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="w-64 cursor-pointer"
+              className="w-full sm:w-64 cursor-pointer"
               onClick={(e) => handleCardClick(slug, planetImages[slug], e)}
             >
-              <div className="flex flex-col justify-between w-64 min-h-[22rem] p-8 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 overflow-hidden transform transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-2xl hover:border-white/30 space-y-4 text-left">
+              <div className="flex flex-col justify-between w-full sm:w-64 min-h-[18rem] sm:min-h-[22rem] p-4 sm:p-6 md:p-8 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 overflow-hidden transform transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-2xl hover:border-white/30 space-y-3 sm:space-y-4 text-left">
                 <img
                   src={planetImages[slug]}
                   alt={planet.name}
-                  // width={256}
-                  // height={144}
-                  className="w-full box-radius- h-36 object-cover rounded-lg border border-white/10"
+                  className="w-full h-28 sm:h-36 object-cover rounded-lg border border-white/10"
                 />
-                <div className="text-2xl font-bold text-white">{planet.name}</div>
-                <p className="text-base text-gray-400">🛰️ Moons: {planet.moons}</p>
-                <p className="text-base text-gray-400">🧲 Gravity: {planet.gravity}</p>
-                <p className="text-base text-gray-400">⏳ Day: {planet.dayLength}</p>
+                <div className="text-xl sm:text-2xl font-bold text-white">{planet.name}</div>
+                <p className="text-sm sm:text-base text-gray-400">🛰️ Moons: {planet.moons}</p>
+                <p className="text-sm sm:text-base text-gray-400">🧲 Gravity: {planet.gravity}</p>
+                <p className="text-sm sm:text-base text-gray-400">⏳ Day: {planet.dayLength}</p>
               </div>
             </motion.div>
           ))}
