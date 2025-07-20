@@ -164,7 +164,7 @@ export default function HomePage() {
       </AnimatePresence>
 
       {/* 🌌 Hero */}
-      <section className="h-screen relative flex flex-col justify-center items-center text-center z-10 px-4 space-y-6">
+      <section className="mt-14 sm:mt-0 h-screen relative flex flex-col justify-center items-center text-center z-10 px-4 space-y-6">
         <motion.h1
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
