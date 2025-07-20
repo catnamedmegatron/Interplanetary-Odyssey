@@ -92,11 +92,25 @@ export default function HomePage() {
       <WeatherOverlay theme={theme} />
 
       {weatherInfo && (
-  <div className="absolute top-4 right-4 text-xm text-white/80 bg-black/40 px-3 py-1 rounded-lg shadow-md backdrop-blur-md z-50">
-    📍 {weatherInfo.location} | {weatherInfo.condition}
-  </div>
-)}
-
+        <div
+          className="
+            fixed
+            sm:absolute
+            bottom-0 left-0 right-0 sm:top-4 sm:right-4
+            w-full sm:w-auto
+            text-center sm:text-left
+            text-xs sm:text-xm
+            text-white/80
+            bg-black/60 sm:bg-black/40
+            px-4 py-2 sm:px-3 sm:py-1
+            rounded-none sm:rounded-lg
+            shadow-md backdrop-blur-md z-50
+          "
+          style={{ pointerEvents: 'none' }}
+        >
+          📍 {weatherInfo.location} | {weatherInfo.condition}
+        </div>
+      )}
 
       {/* Transition Animation */}
       <AnimatePresence>
