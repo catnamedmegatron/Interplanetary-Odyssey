@@ -8,21 +8,38 @@
 
 ## 🌐 Live Demo
 
-🔴 **[Explore Live Demo](https://interplanetary-odyssey.vercel.app/)**  
+🔴 **[InterPlanetary Odyssey](https://interplanetary-odyssey.vercel.app/)**  
 💻 **(Best experienced on desktop/laptop for full 3D & animations)**
 
 ---
 
 ## 🚀 Features
 
-### ✅ Core Features
-- 🪐 **Interactive Planet Pages** — Real-time planetary data, orbital facts, and moons.
-- 🧠 **AI-Generated Summaries & Travel Plans** — Powered by Google Gemini LLM for sci-fi narratives and structured travel itineraries.
-- 🌍 **3D Planet Viewer** — Rotate and explore planet models via embedded Three.js.
-- 🌌 **Dynamic Galaxy UI** — Animated starfield backgrounds and smooth Lottie transitions.
-- 🌧️ **Live Weather** — Mars weather + your current location's weather fetched via OpenWeather API.
-- ❌ **Animated 404 Page** — "Lost Astronaut" Lottie error page.
-- 📱 **Fully Responsive UI** — Optimized for desktop for the full immersive experience.
+### 🪐 Interactive Space Trips
+- Personalized travel itineraries for Mars, Jupiter, Saturn, Pluto, and more.
+- Live 3D planet visualizations (yes, you can rotate Saturn’s rings).
+- Real-time planetary data via NASA APIs — including moons, gravity, orbits, and fun facts.
+
+### 🤖 AI-Generated Sci-Fi Narratives
+- Travel teaser intros and full trip plans powered by Google Gemini AI.
+- Combines factual data with sci-fi storytelling for a unique, immersive experience.
+- Dynamic AI prompts structured through custom API routes for greater flexibility.
+
+### 🌌 Visually Rich UI/UX
+- Animated galaxy backgrounds using Vanta.js.
+- Lottie animations for engaging loaders and pages.
+- Modular UI design with Shadcn/ui components and TailwindCSS styling.
+- Fully responsive layout, optimized for desktop screens to enhance the galactic vibe.
+
+### 🌧️ Weather Updates — Mars AND Earth
+- Live Mars weather stats for realism and educational flair.
+- Your current Earth location’s weather — compare and cry moment included!
+
+### ✨ Bonus Touches
+- Handcrafted astronaut 404 page (because space is vast and errors happen).
+- Desktop-first experience for the best cosmic immersion.
+- Data-driven exploration for all major planets.
+- Clean, modular codebase with scalable APIs and a sprinkle of space geek humor.
 
 ---
 
