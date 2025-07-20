@@ -1,8 +1,15 @@
-# 🪐 Interplanetary Odyssey
+# 🪐 InterPlanetary Odyssey
 
-**Interplanetary Odyssey** is a futuristic, AI-powered space tourism platform that lets users explore planets in our solar system through interactive 3D visuals, live planetary data, and AI-generated sci-fi travel itineraries. 
+**InterPlanetary Odyssey** is a futuristic, AI-powered space tourism platform that lets users explore planets in our solar system through interactive 3D visuals, live planetary data, and AI-generated sci-fi travel itineraries. 
 
-🚀 Built during the **Call2Code 2025 Hackathon** by IEEE SB MUJ, under the **"One API to Rule Them All"** challenge.
+🚀 Built during the **Call2Code 2025 Hackathon** by **IEEE SB MUJ** & **IEEE CS MUJ**, under the "One API to Rule Them All" challenge.
+
+---
+
+## 🌐 Live Demo
+
+🔴 **[Explore Live Demo](https://interplanetary-odyssey.vercel.app/)**  
+💻 **(Best experienced on desktop/laptop for full 3D & animations)**
 
 ---
 
@@ -100,17 +107,6 @@ postcss.config.mjs
 README.md
 tsconfig.json
 ```
----
-
-## 🌐 Live Demo
-
-👉 **[Explore Live Demo](https://interplanetary-odyssey.vercel.app/)**  
-💻 **(Best experienced on desktop/laptop for full 3D & animations)**
-
-## 💻 Source Code
-
-👉 **[View GitHub Repository](https://github.com/catnamedmegatron/Interplanetary-Odyssey)**
-
 ---
 
 ## 💫 Future Scope
