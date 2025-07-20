@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-// @ts-expect-error
+// @ts-expect-error - Vanta library types are not available
 import NET from "vanta/dist/vanta.net.min.js"
 import * as THREE from "three"
 

@@ -43,7 +43,7 @@ export async function GET(req: Request) {
     const data = await res.json()
     const items = data?.collection?.items || []
 
-    const preferredImage = items.find((item: any) => {
+    const preferredImage = items.find((item: { data?: Array<{ title?: string }>; links?: Array<{ href?: string }> }) => {
       const title = item?.data?.[0]?.title?.toLowerCase() || ""
       const href = item?.links?.[0]?.href || ""
 
@@ -61,7 +61,7 @@ export async function GET(req: Request) {
     })
 
     const fallbackImage = items.find(
-      (item: any) => item?.links?.[0]?.href?.endsWith(".jpg")
+      (item: { links?: Array<{ href?: string }> }) => item?.links?.[0]?.href?.endsWith(".jpg")
     )
 
     const image =

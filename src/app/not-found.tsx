@@ -15,7 +15,7 @@ export default function NotFound() {
 
       <h1 className="text-4xl font-bold mt-4">🛰️ Oops! Lost in space?</h1>
       <p className="text-white/70 mt-2 max-w-md">
-        The page you're looking for might have taken a wrong orbit. Want to try Earth again?
+        The page you&apos;re looking for might have taken a wrong orbit. Want to try Earth again?
       </p>
 
       <Link

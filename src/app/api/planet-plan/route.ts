@@ -12,7 +12,7 @@ export async function POST(req: Request) {
     );
   }
 
-  const { name, facts } = await req.json()
+  const { name } = await req.json()
 
   const prompt = `
 You are a witty futuristic space tour guide crafting a fun and **short** travel plan for **${name}**.
