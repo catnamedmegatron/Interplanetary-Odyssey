@@ -1,17 +1,14 @@
 "use client"
 
-import { useEffect, useState, useRef } from "react"
+import { useEffect, useState } from "react"
 import { useInView } from "react-intersection-observer"
 import { motion, AnimatePresence } from "framer-motion"
 import { useRouter } from "next/navigation"
-import Link from "next/link"
 import { planetData } from "@/data/planetData"
 import { planetImages } from "@/data/planetImages"
-import { Button } from "@/components/ui/button"
 import VantaBackground from "@/components/VantaBackground"
 import dynamic from "next/dynamic"
 import WeatherOverlay from "@/components/WeatherOverlay"
-import Image from 'next/image';
 
 // Disable SSR for animations
 const LottieStars = dynamic(() => import("@/components/LottieStars"), { ssr: false })
@@ -114,8 +111,7 @@ export default function HomePage() {
             />
 
             {/* Zooming Image */}
-            <motion.img
-              src={transitionImage}
+            <motion.div
               initial={{
                 position: "fixed",
                 top: clickCoords.y,
@@ -149,12 +145,21 @@ export default function HomePage() {
                 },
               }}
               style={{
-                objectFit: "contain",
                 pointerEvents: "none",
                 borderRadius: "1rem",
               }}
               onAnimationComplete={handleAnimationComplete}
-            />
+            >
+              <img
+                src={transitionImage}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "contain",
+                }}
+                alt="Planet transition"
+              />
+            </motion.div>
           </>
         )}
       </AnimatePresence>

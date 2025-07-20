@@ -1,8 +1,6 @@
 // src/components/WeatherOverlay.tsx
 "use client"
 
-import { useEffect, useRef } from "react"
-
 interface Props {
   theme: string
 }

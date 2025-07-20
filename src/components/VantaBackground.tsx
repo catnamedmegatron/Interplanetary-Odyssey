@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-// @ts-ignore
+// @ts-expect-error
 import NET from "vanta/dist/vanta.net.min.js"
 import * as THREE from "three"
 

@@ -31,8 +31,6 @@ export default function PlanetPage() {
 }>({})
 
 
-  if (!planet) return notFound()
-
   useEffect(() => {
     const fetchGeminiSummary = async () => {
   try {
@@ -118,6 +116,8 @@ export default function PlanetPage() {
     fetchMarsWeather()
     fetchTravelPlan()
   }, [planet.name, planet.funFacts])
+
+  if (!planet) return notFound()
 
   return (
     <main className="relative min-h-screen text-white px-6 py-12 bg-black font-sans overflow-hidden">
