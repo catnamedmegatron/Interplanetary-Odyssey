@@ -139,12 +139,4 @@ tsconfig.json
 ## 👨‍🚀 Team Info
 
 **Team Name:** Team MEOW  
-**Lead Developer:** Shlok Mathurkar  
-**Domain:** Open Innovation  
-**Project Title:** PlanetPath  
-
----
-
-### 🌟 Tagline
-
-> _"A futuristic planetary tourism platform combining 3D visuals, AI planning, and sci-fi storytelling to simulate space travel experiences."_  
+**Lead & Solo Developer:** Shlok Mathurkar
