@@ -9,10 +9,19 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ error: "Missing lat/lon" }, { status: 400 })
   }
 
+  if (!process.env.WEATHER_API_KEY) {
+    return NextResponse.json({ error: "Weather API key not configured" }, { status: 500 })
+  }
+
   try {
     const weatherRes = await fetch(
       `https://api.weatherapi.com/v1/current.json?key=${process.env.WEATHER_API_KEY}&q=${lat},${lon}`
     )
+    
+    if (!weatherRes.ok) {
+      throw new Error(`Weather API responded with status: ${weatherRes.status}`)
+    }
+    
     const weatherData = await weatherRes.json()
 
     return NextResponse.json({
@@ -20,6 +29,7 @@ export async function GET(req: NextRequest) {
       condition: weatherData.current.condition.text.toLowerCase(),
     })
   } catch (err) {
+    console.error("Weather API error:", err)
     return NextResponse.json({ error: "Failed to fetch weather" }, { status: 500 })
   }
 }

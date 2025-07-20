@@ -10,15 +10,23 @@ const nextConfig = {
     return config;
   },
   
-  // ADD THIS 'images' CONFIGURATION HERE:
   images: {
-    domains: ['upload.wikimedia.org'],
-  },
-
-  // ADD THIS 'env' CONFIGURATION HERE:
-  env: {
-    GEMINI_API_KEY: process.env.GEMINI_API_KEY,
+    domains: ['upload.wikimedia.org', 'planetary.s3.amazonaws.com', 'photojournal.jpl.nasa.gov'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'upload.wikimedia.org',
+      },
+      {
+        protocol: 'https',
+        hostname: 'planetary.s3.amazonaws.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'photojournal.jpl.nasa.gov',
+      },
+    ],
   },
 };
 
-module.exports = nextConfig; // Only one module.exports at the end
+module.exports = nextConfig;

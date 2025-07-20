@@ -2,9 +2,16 @@
 import { NextResponse } from "next/server"
 import { GoogleGenerativeAI } from "@google/generative-ai"
 
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY!)
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || "")
 
 export async function POST(req: Request) {
+  if (!process.env.GEMINI_API_KEY) {
+    return NextResponse.json(
+      { plan: "Gemini API key not configured. Please add GEMINI_API_KEY to your environment variables." },
+      { status: 500 }
+    );
+  }
+
   const { name, facts } = await req.json()
 
   const prompt = `

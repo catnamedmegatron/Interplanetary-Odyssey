@@ -36,13 +36,20 @@ Be imaginative, space‑themed, and fun. No extra commentary.
 `;
 
   /* ---------- Gemini call ---------- */
+  if (!process.env.GEMINI_API_KEY) {
+    return NextResponse.json(
+      { summary: "Gemini API key not configured. Please add GEMINI_API_KEY to your environment variables." },
+      { status: 500 }
+    );
+  }
+
   const res = await fetch(
     "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent",
     {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "X-goog-api-key": process.env.GEMINI_API_KEY!,
+        "X-goog-api-key": process.env.GEMINI_API_KEY,
       },
       body: JSON.stringify({
         contents: [

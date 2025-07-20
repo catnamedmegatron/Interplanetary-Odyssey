@@ -10,28 +10,18 @@ import Planet3DEmbed from "@/components/Planet3DEmbed"
 import { itineraries } from "@/data/itineraries"
 
 
-const apiNameMap: Record<string, string> = {
-  mercury: "mercure",
-  venus: "venus",
-  earth: "terre",
-  mars: "mars",
-  jupiter: "jupiter",
-  saturn: "saturne",
-  uranus: "uranus",
-  neptune: "neptune",
-  pluto: "pluton", // optional
-}
+
 
 
 export default function PlanetPage() {
   const { name } = useParams()
   const [loadingSummary, setLoadingSummary] = useState(true)
   const [loadingPlan, setLoadingPlan] = useState(true)
-  const [liveDistance, setLiveDistance] = useState<string | null>(null)
+
   const planet = planetData[name as keyof typeof planetData]
   const itinerary = itineraries[name as keyof typeof itineraries]
   const [summary, setSummary] = useState("Loading travel summary...")
-  const [imageUrl, setImageUrl] = useState("")
+
   const [weather, setWeather] = useState<{ temp?: number; pressure?: number }>({})
   const [travelPlan, setTravelPlan] = useState("")
   const [orbitData, setOrbitData] = useState<{
@@ -64,10 +54,10 @@ export default function PlanetPage() {
     const fetchMarsWeather = async () => {
       if (planet.name.toLowerCase() === "mars") {
         try {
-          const res = await fetch(`${process.env.NEXT_PUBLIC_MARS_WEATHER_API}`)
+          const res = await fetch(`/api/mars-weather`)
           const data = await res.json()
           setWeather({
-            temp: data.min_temp,
+            temp: data.temp,
             pressure: data.pressure,
           })
         } catch (err) {
@@ -94,17 +84,30 @@ export default function PlanetPage() {
 }
 
     const fetchOrbitalData = async () => {
-  const apiName = apiNameMap[planet.name.toLowerCase()]
-  if (!apiName) return
 
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_SOLAR_SYSTEM_API}/${planet.name.toLowerCase()}`)
-    const data = await res.json()
-    setOrbitData({
-      semimajor: data.semimajorAxis,
-      perihelion: data.perihelion,
-      aphelion: data.aphelion,
-    })
+    // For now, we'll use mock data since the solar system API might not be available
+    // You can implement a proper API route later if needed
+    const mockOrbitData = {
+      mercury: { semimajor: 57909175, perihelion: 46001200, aphelion: 69816900 },
+      venus: { semimajor: 108208000, perihelion: 107477000, aphelion: 108939000 },
+      earth: { semimajor: 149598023, perihelion: 147095000, aphelion: 152100000 },
+      mars: { semimajor: 227943824, perihelion: 206655000, aphelion: 249232000 },
+      jupiter: { semimajor: 778570000, perihelion: 740520000, aphelion: 816620000 },
+      saturn: { semimajor: 1433449370, perihelion: 1353572956, aphelion: 1513325783 },
+      uranus: { semimajor: 2870658186, perihelion: 2732496000, aphelion: 3008819000 },
+      neptune: { semimajor: 4498396441, perihelion: 4459753056, aphelion: 4537039826 },
+      pluto: { semimajor: 5906440628, perihelion: 4436756954, aphelion: 7376124302 }
+    }
+    
+    const data = mockOrbitData[planet.name.toLowerCase() as keyof typeof mockOrbitData]
+    if (data) {
+      setOrbitData({
+        semimajor: data.semimajor,
+        perihelion: data.perihelion,
+        aphelion: data.aphelion,
+      })
+    }
   } catch (err) {
     console.error("Failed to fetch orbital data:", err)
   }
