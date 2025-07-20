@@ -6,14 +6,19 @@ const nextConfig = {
     config.resolve.alias = {
       ...(config.resolve.alias || {}),
       cesium: "cesium/Source",
-    }
-    return config
+    };
+    return config;
   },
-}
+  
+  // ADD THIS 'images' CONFIGURATION HERE:
+  images: {
+    domains: ['upload.wikimedia.org'],
+  },
 
-module.exports = nextConfig
-module.exports = {
+  // ADD THIS 'env' CONFIGURATION HERE:
   env: {
     GEMINI_API_KEY: process.env.GEMINI_API_KEY,
   },
-}
+};
+
+module.exports = nextConfig; // Only one module.exports at the end

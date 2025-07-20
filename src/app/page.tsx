@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button"
 import VantaBackground from "@/components/VantaBackground"
 import dynamic from "next/dynamic"
 import WeatherOverlay from "@/components/WeatherOverlay"
+import Image from 'next/image';
 
 // Disable SSR for animations
 const LottieStars = dynamic(() => import("@/components/LottieStars"), { ssr: false })
@@ -262,6 +263,8 @@ export default function HomePage() {
                 <img
                   src={planetImages[slug]}
                   alt={planet.name}
+                  // width={256}
+                  // height={144}
                   className="w-full box-radius- h-36 object-cover rounded-lg border border-white/10"
                 />
                 <div className="text-2xl font-bold text-white">{planet.name}</div>
