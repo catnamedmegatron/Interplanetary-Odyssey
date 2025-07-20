@@ -38,22 +38,6 @@
 
 ---
 
-## 📸 Screenshots
-
-### 🏠 Home Page
-![Home Page](./public/screenshots/home-page.png)
-
-### 🪐 Planet Overview
-![Planet Overview](./public/screenshots/planet-overview.png)
-
-### 🧠 AI Travel Plan
-![Gemini AI Plan](./public/screenshots/gemini.png)
-
-### 🚀 Mars Itinerary
-![Mars Itinerary](./public/screenshots/itinerary.png)
-
----
-
 ## 📂 Project Directory Structure
 
 ```plaintext
