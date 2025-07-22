@@ -62,70 +62,6 @@
 
 ---
 
-## 📂 Project Directory Structure
-
-```plaintext
-src/
- ┣ app/
- ┃ ┣ api/                            # API routes for AI summaries, travel plans, weather
- ┃ ┃ ┣ gemini-summary/
- ┃ ┃ ┃ ┗ route.ts                    # AI-generated planet summary endpoint
- ┃ ┃ ┣ gemini-travel-summary/
- ┃ ┃ ┃ ┗ route.ts                    # AI-generated travel itineraries endpoint
- ┃ ┃ ┣ mars-weather/
- ┃ ┃ ┃ ┗ route.ts                    # Live Mars weather data from NASA API
- ┃ ┃ ┣ planet-image/
- ┃ ┃ ┃ ┗ route.ts                    # Dynamic planet image fetch endpoint
- ┃ ┃ ┣ planet-plan/
- ┃ ┃ ┃ ┗ route.ts                    # Travel plan endpoint with fallback handling
- ┃ ┃ ┗ weather/
- ┃ ┃ ┃ ┗ route.ts                    # Local Earth weather via OpenWeather API
- ┃ ┣ dashboard/
- ┃ ┃ ┣ layout.tsx                    # Dashboard layout
- ┃ ┃ ┗ page.tsx                      # Dashboard page
- ┃ ┣ planet/[name]/
- ┃ ┃ ┗ page.tsx                      # Dynamic planet detail page
- ┃ ┣ favicon.ico
- ┃ ┣ globals.css                     # Global styles including animations and fonts
- ┃ ┣ layout.tsx                      # App layout (Navbar, Vanta.js background)
- ┃ ┣ not-found.tsx                   # Creative 404 page (Lost Astronaut animation)
- ┃ ┗ page.tsx                        # Homepage with planet grid
- ┣ assets/
- ┃ ┗ animations/
- ┃ ┃ ┣ astronaut-404.json            # Lottie animation for 404 page
- ┃ ┃ ┣ gemini-plan-loading.json
- ┃ ┃ ┣ gemini-summary-loading.json
- ┃ ┃ ┗ home-loading.json
- ┣ components/
- ┃ ┣ ui/
- ┃ ┃ ┣ HomeLoader.tsx
- ┃ ┃ ┣ LoadingPlan.tsx
- ┃ ┃ ┣ LoadingSummary.tsx
- ┃ ┃ ┣ LottieStars.tsx
- ┃ ┃ ┣ Planet3DEmbed.tsx            # 3D Planet viewer (iframe embed)
- ┃ ┃ ┣ VantaBackground.tsx           # Animated galaxy background
- ┃ ┃ ┗ WeatherOverlay.tsx            # Current Earth weather component
- ┣ data/
- ┃ ┣ itineraries.ts                  # Smart itineraries for each planet
- ┃ ┣ planetData.ts                   # Static facts about planets
- ┃ ┗ planetimages.ts                 # Planet image URLs and config
- ┣ lib/
- ┃ ┗ getLocalWeather.ts              # Function to fetch Earth weather via OpenWeather
-.env.local                             # API keys and environment variables
-.gitignore
-components.json                        # shadcn/ui component registry
-eslint.config.mjs
-next-env.d.ts
-next.config.js
-next.config.ts
-package-lock.json
-package.json
-postcss.config.mjs
-README.md
-tsconfig.json
-```
----
-
 ## 💫 Future Scope
 
 - 🚀 **Boarding Pass Generator** (sci-fi themed downloadable trip passes)
@@ -138,5 +74,5 @@ tsconfig.json
 
 ## 👨‍🚀 Team Info
 
-**Team Name:** Team MEOW  
+**Team Name:** MEOW  
 **Lead & Solo Developer:** Shlok Mathurkar
